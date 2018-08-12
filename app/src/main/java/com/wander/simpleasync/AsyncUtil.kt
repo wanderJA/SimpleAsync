@@ -15,18 +15,27 @@ import kotlin.math.log
  */
 object AsyncUtil {
     val tag = "AsyncUtil"
-    private val singleExecutorService = Executors.newSingleThreadExecutor()
+    private val singleExecutorService = ListenableExecutors.newSingleThreadExecutor()
 
     fun executorSingle() {
-        Log.e(tag,"start")
+        Log.e(tag, "start")
         val future = singleExecutorService.submit(Callable<String> {
 
             Thread.sleep(2000)
             return@Callable "sleep"
-        })
-        Log.e(tag,"threat")
-        var get = future.get()
-        Log.e(tag, "get result:$get")
+        }) as ListenableFutureTask
+        future.observer = object : Observer<String> {
+            override fun onNext(t: String) {
+                Log.e(tag, "onNext:$t")
+            }
+
+            override fun onError(e: Throwable) {
+            }
+
+            override fun onComplete() {
+                Log.e(tag, "onComplete")
+            }
+        }
 
     }
 

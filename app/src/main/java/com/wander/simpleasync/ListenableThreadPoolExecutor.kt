@@ -61,10 +61,6 @@ open class ListenableThreadPoolExecutor : ThreadPoolExecutor {
                 threadFactory: ThreadFactory?,
                 handler: RejectedExecutionHandler?) : super(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, threadFactory, handler)
 
-    private fun <T> newOrgTask(runnable: Runnable, value: T? = null): RunnableFuture<T> {
-        return FutureTask(runnable, value)
-    }
-
     protected fun <T> newListenableTask(runnable: Runnable, value: T? = null): ListenableFutureTask<T> {
         return ListenableFutureTask(runnable, value)
     }
