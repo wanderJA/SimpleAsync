@@ -8,7 +8,7 @@ import java.util.concurrent.Executor
  * date 2018/8/11
  *
  */
-class ExcutionList {
+class ExecutionList {
     private var runnables: RunnableExecutorPair? = null
     private var executed: Boolean = false
 

@@ -9,5 +9,5 @@ import java.util.concurrent.Future
  *
  */
 interface ListenableFuture<V> : Future<V> {
-    fun addListener(var1: Runnable, var2: Executor)
+    fun addListener(runnable: Runnable, executor: Executor)
 }
