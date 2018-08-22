@@ -1,8 +1,9 @@
-package com.wander.simpleasync
+package com.wander.simpleasync.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.wander.simpleasync.R
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onClick(v: View?) {

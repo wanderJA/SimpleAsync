@@ -1,12 +1,10 @@
-package com.wander.simpleasync
+package com.wander.simpleasync.ui
 
 import android.util.Log
+import com.wander.simpleasync.ListenableExecutors
+import com.wander.simpleasync.ListenableFutureTask
+import com.wander.simpleasync.Observer
 import java.util.concurrent.Callable
-import java.util.concurrent.Executor
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
-import java.util.logging.Logger
-import kotlin.math.log
 
 /**
  * author wangdou
