@@ -1,14 +1,27 @@
 package com.wander.simpleasync
 
-class ObservableAsync {
+import java.util.concurrent.Callable
 
+abstract class ObservableAsync<T> {
 
+    fun create(runnable: Runnable){
 
+    }
 
-    fun subscribeOn(){
+    fun <T> create(callable: Callable<T>){
 
 
     }
+
+
+
+
+    fun subscribeOn(observer: Observer<T>){
+
+
+    }
+
+    abstract fun subscribeActual(observer: Observer<T>)
 
 
 }
